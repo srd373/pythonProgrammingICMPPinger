@@ -109,7 +109,7 @@ def ping(host, timeout=1):
         dest = gethostbyname(host)
     except:
         vars = ['0', '0.0', '0', '0.0']
-        print(vars)
+        #print(vars)
         return vars
 
     print("Pinging " + dest + " using Python:")
@@ -135,9 +135,8 @@ def ping(host, timeout=1):
     # Calculate vars values and return them
     packet_avg = packet_avg / len(packet_list)
     packet_stddev = statistics.stdev(packet_list)
-    vars = [str(round(packet_min*1000, 2)), str(round(packet_avg*1000, 2)), str(round(packet_max*1000, 2)),
-            str(round(packet_stddev*1000, 2))]
-    print(vars)
+    vars = [round(packet_min*1000, 2), round(packet_avg*1000, 2), round(packet_max*1000, 2), round(packet_stddev*1000, 2)]
+    #print(vars)
     return vars
 
 if __name__ == '__main__':
